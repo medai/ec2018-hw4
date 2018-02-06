@@ -1,0 +1,23 @@
+<div class="card bg-light">
+  <div class="card-header">
+    {{ isNew ? "Add new project" : "Update project" }}
+
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input
+          type        ="text"
+          class       ="form-control"
+          [(ngModel)] ="projectName"
+          name        ="projectName"
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!projectName">{{ isNew ? "Add project" : "Update project" }}</button>
+      <button type="button" class="btn btn-warning" [hidden]="!projectName" (click)="clearState()">Clear</button>
+
+    </form>
+  </div>
+</div>

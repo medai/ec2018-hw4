@@ -1,0 +1,9 @@
+
+<div *ngIf  ="show"
+     class  ="alert d-flex justify-content-center"
+     [ngClass]="{'alert-success': alert.type==='add', 'alert-warning': alert.type==='update', 'alert-danger': alert.type==='delete'}"
+     role   ="alert">
+    {{alert.text}}
+</div>
+
+

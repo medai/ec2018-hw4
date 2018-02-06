@@ -1,0 +1,20 @@
+<div class="card bg-light">
+  <div class="card-header">
+    {{ isNew ? "Add log" : "Update log" }}
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input type         ="text"
+               class        ="form-control"
+               [(ngModel)]  ="text"
+               name         ="text">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!text">{{ isNew ? "Add log" : "Update log" }}</button>
+      <button type="button" class="btn btn-warning" [hidden]="!text" (click)="clearState()">Clear</button>
+
+    </form>
+  </div>
+</div>
